@@ -3,15 +3,16 @@ const readline = require('readline');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 // data
-const etunimet = ["Mikko", "Anna", "Juhani", "Liisa", "Pekka", "Sari", "Timo", "Elina", "Ville", "Maria", "Heikki", "Sofia", "Juha", "Laura", "Eero", "Hanna", "Jussi", "Aino", "Janne", "Kaisa", "Teemu", "Satu", "Antti", "Katja", "Matti", "Niina", "Jari", "Anni", "Mika", "Leena", "Tuomas", "Ella", "Risto", "Elisa", "Samuli", "Helena", "Tuukka", "Mari", "Lauri", "Marika", "Aki", "Riikka", "Veikko", "Kati", "Sami", "Henna", "Seppo", "Susanna"],
+etunimet = ["Mikko", "Anna", "Juhani", "Liisa", "Pekka", "Sari", "Timo", "Elina", "Ville", "Maria", "Heikki", "Sofia", "Juha", "Laura", "Eero", "Hanna", "Jussi", "Aino", "Janne", "Kaisa", "Teemu", "Satu", "Antti", "Katja", "Matti", "Niina", "Jari", "Anni", "Mika", "Leena", "Tuomas", "Ella", "Risto", "Elisa", "Samuli", "Helena", "Tuukka", "Mari", "Lauri", "Marika", "Aki", "Riikka", "Veikko", "Kati", "Sami", "Henna", "Seppo", "Susanna"],
 
   sukunimet = ["Korhonen", "Virtanen", "M\xe4kinen", "Nieminen", "Koskinen", "H\xe4m\xe4l\xe4inen", "Laine", "Lehtonen", "Heikkinen", "J\xe4rvinen", "Laaksonen", "Miettinen", "Koivisto", "M\xe4kel\xe4", "Rantanen", "Salminen", "Kinnunen", "Jokinen", "Aaltonen", "Hakala", "Tuominen", "Lindroos", "Karppinen", "Laitinen", "Kujala", "Korpela", "Lindstr\xf6m", "Mikkola", "Laukkanen", "Tolonen", "Savolainen", "Pakarinen", "Kokko", "Virta", "Karjalainen", "Koivula", "Koivu", "Laukka", "Saari", "Kallio", "Hiltunen", "Rinne", "Rissanen", "Hirvonen", "Ranta", "Korpi", "Koskela", "Kukkonen"],
 
   kadunnimet = ["Kapraantie", "Testitie", "Kuusitie", "M\xe4ntykatu", "Omenapolku", "Vaahteratie", "Katajakuja", "Haavapolku", "Tammikuja", "Koivutie", "Pihlajatie", "Lehtikatu", "Kastanjatie", "Vadelmakuja", "Herukkatie", "Kirsikkatie", "Mets\xe4tie", "J\xe4rvenranta", "Aurinkokatu", "T\xe4htikuja", "Kuunsilta", "Purjeentie", "Hiekkakuja", "Merituuli", "Vesitorninkatu", "Satamakatu", "Siltatie", "Tulppaanikatu", "Orvokkitie", "Ruusupuisto", "Lumikuja", "Hangaspolku", "Kimaltaj\xe4rvi", "Kuutamotie", "Revontulentie", "T\xe4htisilm\xe4", "Pilvitie", "Sadekuja", "Sateenkaarentie", "Taikamets\xe4", "Unikkopolku", "Ruohokatu", "Keltakuja", "Sinipolku", "Oranssikuja", "Punatienniemi", "Sinipiha", "Vihersiili", "Harmaaranta"],
 
   kaupungit = ["Lahti", "Jyv\xe4skyl\xe4", "Kuopio", "Lappeenranta", "Rovaniemi", "Joensuu", "Vaasa", "Kajaani", "Kokkola", "Sein\xe4joki", "Kouvola", "H\xe4meenlinna", "Mikkeli", "Savonlinna", "Porvoo", "Varkaus", "Hyvink\xe4\xe4", "Salo", "Kotka", "Pietarsaari"],
+
   postinumerot =
-    ["15100", "40100", "70100", "53100", "96100", "80100", "65100", "87100", "67100", "60100", "45100", "13100", "50100", "57100", "06100", "79100", "78200", "05800", "24100", "48100", "68600"],
+  ["15100", "40100", "70100", "53100", "96100", "80100", "65100", "87100", "67100", "60100", "45100", "13100", "50100", "57100", "06100", "79100", "78200", "05800", "24100", "48100", "68600"],
 
   PuhelinNumerot = ["+358 404372343", "+358 403843243", "+358 405678901", "+358 409876543", "+358 406543210", "+358 402345678", "+358 407654321", "+358 408765432", "+358 401234567", "+358 402345678", "+358 409876543", "+358 406543210", "+358 405678901", "+358 403843243", "+358 407654321", "+358 401234567", "+358 408765432", "+358 402345678", "+358 403843243", "+358 406543210", "+358 405678901", "+358 401234567", "+358 408765432", "+358 409876543", "+358 407654321", "+358 402345678", "+358 405678901", "+358 401234567", "+358 408765432", "+358 409876543", "+358 402345678", "+358 404372343", "+358 405678901", "+358 403843243", "+358 401234567", "+358 407654321", "+358 406543210", "+358 402345678"],
 
@@ -19,7 +20,7 @@ const etunimet = ["Mikko", "Anna", "Juhani", "Liisa", "Pekka", "Sari", "Timo", "
 
   Sukupuoli = ["Mies", "Nainen"],
 
-  Maksutapa = ["Paypal", "Skrill", "Credit/Debit card", "Bitcoin", "Ethereum", "Coinbase pay", "Moon pay"],
+  Maksutapa = ["Paypal", "Skrill", "Credit/Debit card", "Bitcoin", "Ethereum", "Coinbase pay", "Moon pay", "Gift card", "Trust"],
 
   Toimitustapa = ["Posti automaatti", "Ovelle", "Postin toimipiste"],
 
