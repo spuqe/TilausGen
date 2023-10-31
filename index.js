@@ -257,7 +257,7 @@ rl.question('Enter the number of buy orders you want to generate: ', (numberOfBu
         button {
           position: absolute;
           right: 20px;
-          top: 24px;
+          top: 23px;
           background-color: #3a09e8;
           color: white;
           padding: 30px 60px;
@@ -283,6 +283,25 @@ rl.question('Enter the number of buy orders you want to generate: ', (numberOfBu
     <body>
       <button onclick="toggleTheme()">Toggle Theme</button>
       <h1>Buy Orders</h1>
+
+      <script>
+        function toggleTheme() {
+          const body = document.body;
+          const table = document.querySelector('table');
+          const rows = document.querySelectorAll('tr');
+
+          if (body.classList.contains('dark-theme')) {
+            body.classList.remove('dark-theme');
+            table.classList.remove('dark-theme');
+            rows.forEach((row) => row.classList.remove('dark-theme'));
+          } else {
+            body.classList.add('dark-theme');
+            table.classList.add('dark-theme');
+            rows.forEach((row) => row.classList.add('dark-theme'));
+          }
+        }
+      </script>
+
       <table>
         <tr>
           <th>Order #</th>
@@ -303,27 +322,6 @@ rl.question('Enter the number of buy orders you want to generate: ', (numberOfBu
           <th>Carrier Company</th>
           <th>Order Status</th>
         </tr>
-  `;
-
-  // JavaScript function to toggle between light and dark themes
-  htmlContent += `
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const table = document.querySelector('table');
-      const rows = document.querySelectorAll('tr');
-
-      if (body.classList.contains('dark-theme')) {
-        body.classList.remove('dark-theme');
-        table.classList.remove('dark-theme');
-        rows.forEach((row) => row.classList.remove('dark-theme'));
-      } else {
-        body.classList.add('dark-theme');
-        table.classList.add('dark-theme');
-        rows.forEach((row) => row.classList.add('dark-theme'));
-      }
-    }
-  </script>
   `;
 
   // Continue with generating and displaying the buy orders as before
