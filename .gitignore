@@ -6,6 +6,7 @@ build/
 *.csv
 *.json
 *.html
+buy_orders.*
 
 # Add the necessary patterns to ignore Replit files in gitignore
 .replit
