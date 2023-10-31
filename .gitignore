@@ -1,0 +1,16 @@
+#.gitignore
+node_modules/
+dist/
+build/
+*.log
+*.csv
+*.json
+*.html
+
+# Add the necessary patterns to ignore Replit files in gitignore
+.replit
+.replitignore
+
+# Ignore .replit and replit.nix
+.replit
+replit.nix

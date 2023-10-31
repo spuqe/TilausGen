@@ -53,4 +53,5 @@ Voit säätää seuraavia parametreja ohjelman alussa:
 
 ## Lisätiedot
 Ohjelma lisää jokaiselle tilaukselle veron (24%) ja satunnaisen tilausstatussen.
+
 Taulukkotyylin voit mukauttaa tiedostossa buy_orders.html.
