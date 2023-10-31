@@ -33,7 +33,7 @@ Ohjelma generoi seuraavat tiedostot:
 * **buy_orders.html:** HTML-tiedosto ostotilausten esittämiseen taulukkomuodossa.
 
 
-## Parametrt
+## Parametrit
 
 Voit säätää seuraavia parametreja ohjelman alussa:
 ```
