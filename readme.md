@@ -1,7 +1,7 @@
 # Buy Orders Generator
 
 Tämä ohjelma generoi satunnaisia ostotilauksia CSV-, JSON- ja HTML-tiedostoiksi. Jokainen ostotilaus sisältää satunnaisia asiakastietoja, tuotteita ja tilaustietoja.
-
+Replit: https://replit.com/@spuqe/TilausGen-1
 ## Ominaisuudet
 
 - Generoi satunnaisia ostotilauksia.
