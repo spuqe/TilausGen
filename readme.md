@@ -2,6 +2,14 @@
 
 Tämä ohjelma generoi satunnaisia ostotilauksia CSV-, JSON- ja HTML-tiedostoiksi. Jokainen ostotilaus sisältää satunnaisia asiakastietoja, tuotteita ja tilaustietoja.
 
+## Ominaisuudet
+
+- Generoi satunnaisia ostotilauksia.
+- Sisältää satunnaisia asiakastietoja, tuotteita ja tilaustietoja.
+- Tuotteilla on mukana arvonlisävero (ALV).
+- Tilauksille määritetään satunnainen tilausstatus.
+- Tallentaa CSV, JSON ja HTML tiedosto muotoihin datan.
+  
 ## Käyttö
 
 1. Asenna tarvittavat riippuvuudet:
@@ -20,9 +28,9 @@ Ohjelma kysyy sinulta, kuinka monta satunnaista ostotilausta haluat generoida.
 ## Generoidut tiedostot
 Ohjelma generoi seuraavat tiedostot:
 
-**buy_orders.csv:** CSV-tiedosto ostotilauksille.
-**buy_orders.json:** JSON-tiedosto ostotilauksille.
-**buy_orders.html:** HTML-tiedosto ostotilausten esittämiseen taulukkomuodossa.
+* **buy_orders.csv:** CSV-tiedosto ostotilauksille.
+* **buy_orders.json:** JSON-tiedosto ostotilauksille.
+* **buy_orders.html:** HTML-tiedosto ostotilausten esittämiseen taulukkomuodossa.
 
 
 ## Parametrt
