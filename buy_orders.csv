@@ -1,0 +1,6 @@
+Order Number,Full Name,Address,Phone Number,Email,Gender,Payment Method,Delivery Method,Products,Order Total,Order Total With Tax,Transaction ID,Order Date,Payment Status,Payment Date,Tracking Number,Estimated Delivery Date,Carrier Company,Order Status
+,Seppo Miettinen,"Tähtikuja, Kouvola, 53100",+358 406543210,SeppoMiettinen@outlook.com,Mies,Bitcoin,Posti automaatti,"[object Object],[object Object],[object Object]",3472,,827733,2023-03-10T07:26:01.501Z,,,,,,Delivered
+,Antti Mäkinen,"Tammikuja, Kuopio, 70100",+358 401234567,AnttiMäkinen@gmail.com,Mies,Ethereum,Ovelle,"[object Object],[object Object],[object Object],[object Object],[object Object]",9696.8,,979354,2023-08-22T08:18:00.918Z,,,,,,Shipped
+,Niina Karjalainen,"Lehtikatu, Hämeenlinna, 05800",+358 408765432,NiinaKarjalainen@gmail.com,Mies,Bitcoin,Ovelle,"[object Object],[object Object]",1798,,516401,2023-09-24T14:44:41.483Z,,,,,,Processing
+,Leena Lindroos,"Kapraantie, Kouvola, 80100",+358 401234567,LeenaLindroos@zoho.com,Mies,Coinbase pay,Postin toimipiste,"[object Object],[object Object]",248,,719784,2023-08-31T12:12:26.310Z,,,,,,Processing
+,Elina Laukka,"Haavapolku, Mikkeli, 24100",+358 402345678,ElinaLaukka@outlook.com,Mies,Paypal,Postin toimipiste,"[object Object],[object Object],[object Object]",4488.799999999999,,581875,2023-07-01T19:43:00.560Z,,,,,,Shipped

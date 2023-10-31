@@ -1,0 +1,33 @@
+[
+  {
+    "FullName": "Mari Heikkinen",
+    "Address": "Aurinkokatu, Hyvinkää, 24100",
+    "PhoneNumber": "+358 402345678",
+    "Email": "MariHeikkinen@gmail.com",
+    "Gender": "Nainen",
+    "PaymentMethod": "Paypal",
+    "DeliveryMethod": "Posti automaatti",
+    "Products": [
+      {
+        "Name": "External Hard Drive",
+        "Quantity": 2,
+        "Price": 120,
+        "ProductTotal": 240,
+        "ProductTotalWithTax": 297.6
+      }
+    ],
+    "OrderTotal": 297.6,
+    "TransactionID": 426160,
+    "OrderDate": "2023-07-21T14:44:53.787Z",
+    "PaymentConfirmation": {
+      "PaymentStatus": "Success",
+      "PaymentDate": "2023-05-01T04:19:53.871Z"
+    },
+    "ShippingTracking": {
+      "TrackingNumber": "973374109",
+      "EstimatedDeliveryDate": "2023-11-04T16:33:14.829Z",
+      "CarrierCompany": "FedEx"
+    },
+    "OrderStatus": "Cancelled"
+  }
+]
