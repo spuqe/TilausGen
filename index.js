@@ -188,9 +188,9 @@ function generateAndPrintBuyOrderHTML(buyOrder, index) {
   htmlContent += `<td>Order Date: ${buyOrder.OrderDate}</td>`;
   htmlContent += `<td>${buyOrder.PaymentConfirmation.PaymentStatus}, 
   Date: ${buyOrder.PaymentConfirmation.PaymentDate}</td>`;
-  htmlContent += `<td>Tracking number: <br>${buyOrder.ShippingTracking.TrackingNumber},<br><br>
-  Estimated Delivery Date:<br> ${buyOrder.ShippingTracking.EstimatedDeliveryDate},<br><br>
-  Carrier Company: <br>${buyOrder.ShippingTracking.CarrierCompany}</td><br>`;
+  htmlContent += `<td>${buyOrder.ShippingTracking.TrackingNumber}</td>,
+  <td>Estimated Delivery Date${buyOrder.ShippingTracking.EstimatedDeliveryDate}</td>,
+  <td>${buyOrder.ShippingTracking.CarrierCompany}</td>`;
   htmlContent += `<td>${buyOrder.OrderStatus}</td>`;
   htmlContent += `</tr>`;
 
@@ -205,76 +205,139 @@ rl.question('Enter the number of buy orders you want to generate: ', (numberOfBu
 
   // Create an HTML template with a table structure and modern CSS styles
   let htmlContent = `
-    <html>
-      <head>
-        <title>Buy Orders</title>
-        <style>
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-          }
-          h1 {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-          }
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px;
-            background-color: white;
-          }
-          th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-          }
-          th {
-            background-color: #007bff;
-            color: white;
-          }
-          tr:nth-child(even) {
-            background-color: #f2f2f2;
-          }
-          ul {
-            list-style-type: none;
-            padding: 0;
-          }
-        </style>
-      </head>
-      <body>
-        <h1>Generated Buy Orders</h1>
-        <table>
-          <tr>
-            <th>Order #</th>
-            <th>Full Name</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Payment Method</th>
-            <th>Delivery Method</th>
-            <th>Products</th>
-            <th>Order Total</th>
-            <th>Transaction ID</th>
-            <th>Order Date</th>
-            <th>Payment Confirmation</th>
-            <th>Shipping Tracking</th>
-            <th>Order Status</th>
-          </tr>
+  <html>
+    <head>
+      <title>Buy Orders</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+          color: #000000;
+        }
+        body.dark-theme {
+          background-color: #1f1f1f;
+          color: #ffffff;
+        }
+        h1 {
+          background-color: #007bff;
+          color: white;
+          padding: 20px;
+          text-align: center;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 20px;
+          background-color: white;
+          color: #000000;
+        }
+        table.dark-theme {
+          background-color: #2f2f2f;
+          color: #ffffff;
+        }
+        th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: #007bff;
+          color: white;
+        }
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        tr.dark-theme:nth-child(even) {
+          background-color: #2f2f2f;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        button {
+          position: absolute;
+          right: 20px;
+          top: 24px;
+          background-color: #3a09e8;
+          color: white;
+          padding: 30px 60px;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px;
+        }
+        
+        button:hover {
+          background-color: #0056b3;
+        }
+        
+        button.dark-theme {
+          background-color: #1f1f1f;
+          color: #ffffff;
+        }
+        
+        button.dark-theme:hover {
+          background-color: #333333;
+        }
+      </style>
+    </head>
+    <body>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+      <h1>Buy Orders</h1>
+      <table>
+        <tr>
+          <th>Order #</th>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Payment Method</th>
+          <th>Delivery Method</th>
+          <th>Products</th>
+          <th>Order Total</th>
+          <th>Transaction ID</th>
+          <th>Order Date</th>
+          <th>Payment Confirmation</th>
+          <th>Shipping Tracking</th>
+          <th>Delivery Date</th>
+          <th>Carrier Company</th>
+          <th>Order Status</th>
+        </tr>
   `;
 
+  // JavaScript function to toggle between light and dark themes
+  htmlContent += `
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const table = document.querySelector('table');
+      const rows = document.querySelectorAll('tr');
+
+      if (body.classList.contains('dark-theme')) {
+        body.classList.remove('dark-theme');
+        table.classList.remove('dark-theme');
+        rows.forEach((row) => row.classList.remove('dark-theme'));
+      } else {
+        body.classList.add('dark-theme');
+        table.classList.add('dark-theme');
+        rows.forEach((row) => row.classList.add('dark-theme'));
+      }
+    }
+  </script>
+  `;
+
+  // Continue with generating and displaying the buy orders as before
   randomBuyOrders.forEach((buyOrder, index) => {
     htmlContent += generateAndPrintBuyOrderHTML(buyOrder, index);
   });
 
   // Close the table and HTML structure
   htmlContent += `
-        </table>
-      </body>
-    </html>
+      </table>
+    </body>
+  </html>
   `;
+
 
   try {
     // Write the HTML content to a file
