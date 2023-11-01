@@ -21,6 +21,13 @@ Replit palvelussa näet JSON muodossa datan, tai forkkaamalla projektin näet my
    npm install
 ```
 
+Tai yksitellen
+```bash
+  npm install csv-writer
+  npm install readline
+```
+
+
 2. Suorita ohjelma
 ```
   node index.js
