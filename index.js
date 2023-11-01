@@ -53,7 +53,7 @@ function generateRandomPaymentConfirmation() {
 }
 
 function generateRandomShippingTracking() {
-  const carrierCompanies = ['Matkahuolto', 'Posti', 'DHL', 'UPS', 'DB   Schenker', 'Itella', 'PostNord', 'GLS', 'Schenker', 'FedEx'];
+  const carrierCompanies = ['Matkahuolto', 'Posti', 'DHL', 'UPS', 'DB Schenker', 'Itella', 'PostNord', 'GLS', 'Schenker', 'FedEx'];
   const trackingNumber = Math.floor(Math.random() * 1000000000).toString();
   const estimatedDeliveryDate = new Date(new Date().getTime() + Math.random() * 30 * 24 * 60 * 60 * 1000);
   const carrierCompany = getRandomItemFromArray(carrierCompanies);
@@ -135,7 +135,6 @@ function generateRandomBuyOrders(count) {
   return buyOrders;
 }
 
-// Define the headers for the CSV file
 const csvWriter = createCsvWriter({
   path: 'buy_orders.csv',
   header: [
@@ -186,11 +185,10 @@ function generateAndPrintBuyOrderHTML(buyOrder, index) {
   htmlContent += `<td>${buyOrder.OrderTotal}</td>`;
   htmlContent += `<td>Transaction ID: ${buyOrder.TransactionID}</td>`;
   htmlContent += `<td>Order Date: ${buyOrder.OrderDate}</td>`;
-  htmlContent += `<td>${buyOrder.PaymentConfirmation.PaymentStatus}, 
-  Date: ${buyOrder.PaymentConfirmation.PaymentDate}</td>`;
-  htmlContent += `<td>${buyOrder.ShippingTracking.TrackingNumber}</td>,
-  <td>Estimated Delivery Date${buyOrder.ShippingTracking.EstimatedDeliveryDate}</td>,
-  <td>${buyOrder.ShippingTracking.CarrierCompany}</td>`;
+  htmlContent += `<td>${buyOrder.PaymentConfirmation.PaymentStatus}, Date: ${buyOrder.PaymentConfirmation.PaymentDate}</td>`;
+  htmlContent += `<td>${buyOrder.ShippingTracking.TrackingNumber}</td>`;
+  htmlContent += `<td>Estimated Delivery Date: ${buyOrder.ShippingTracking.EstimatedDeliveryDate}</td>`;
+  htmlContent += `<td>${buyOrder.ShippingTracking.CarrierCompany}</td>`;
   htmlContent += `<td>${buyOrder.OrderStatus}</td>`;
   htmlContent += `</tr>`;
 
@@ -200,165 +198,175 @@ function generateAndPrintBuyOrderHTML(buyOrder, index) {
   return htmlContent;
 }
 
+
+// validate user-input
+function isValidNumber(input) {
+  return /^\d+$/.test(input) && parseInt(input, 10) > 0;
+}
+
 rl.question('Enter the number of buy orders you want to generate: ', (numberOfBuyOrders) => {
-  const randomBuyOrders = generateRandomBuyOrders(parseInt(numberOfBuyOrders));
+  if (isValidNumber(numberOfBuyOrders)) {
+    const randomBuyOrders = generateRandomBuyOrders(parseInt(numberOfBuyOrders));
 
-  // Create an HTML template with a table structure and modern CSS styles
-  let htmlContent = `
-  <html>
-    <head>
-      <title>Buy Orders</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f2f2f2;
-          color: #000000;
-        }
-        body.dark-theme {
-          background-color: #1f1f1f;
-          color: #ffffff;
-        }
-        h1 {
-          background-color: #007bff;
-          color: white;
-          padding: 20px;
-          text-align: center;
-        }
-        table {
-          width: 100%;
-          border-collapse: collapse;
-          margin: 20px;
-          background-color: white;
-          color: #000000;
-        }
-        table.dark-theme {
-          background-color: #2f2f2f;
-          color: #ffffff;
-        }
-        th, td {
-          border: 1px solid #ddd;
-          padding: 8px;
-          text-align: left;
-        }
-        th {
-          background-color: #007bff;
-          color: white;
-        }
-        tr:nth-child(even) {
-          background-color: #f2f2f2;
-        }
-        tr.dark-theme:nth-child(even) {
-          background-color: #2f2f2f;
-        }
-        ul {
-          list-style-type: none;
-          padding: 0;
-        }
-        button {
-          position: absolute;
-          right: 20px;
-          top: 23px;
-          background-color: #3a09e8;
-          color: white;
-          padding: 30px 60px;
-          border: none;
-          cursor: pointer;
-          border-radius: 4px;
-        }
-        
-        button:hover {
-          background-color: #0056b3;
-        }
-        
-        button.dark-theme {
-          background-color: #1f1f1f;
-          color: #ffffff;
-        }
-        
-        button.dark-theme:hover {
-          background-color: #333333;
-        }
-      </style>
-    </head>
-    <body>
-      <button onclick="toggleTheme()">Toggle Theme</button>
-      <h1>Buy Orders</h1>
-
-      <script>
-        function toggleTheme() {
-          const body = document.body;
-          const table = document.querySelector('table');
-          const rows = document.querySelectorAll('tr');
-
-          if (body.classList.contains('dark-theme')) {
-            body.classList.remove('dark-theme');
-            table.classList.remove('dark-theme');
-            rows.forEach((row) => row.classList.remove('dark-theme'));
-          } else {
-            body.classList.add('dark-theme');
-            table.classList.add('dark-theme');
-            rows.forEach((row) => row.classList.add('dark-theme'));
+    // Create an HTML template with a table structure and modern CSS styles
+    let htmlContent = `
+    <html>
+      <head>
+        <title>Buy Orders</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #000000;
           }
-        }
-      </script>
+          body.dark-theme {
+            background-color: #1f1f1f;
+            color: #ffffff;
+          }
+          h1 {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px;
+            background-color: white;
+            color: #000000;
+          }
+          table.dark-theme {
+            background-color: #2f2f2f;
+            color: #ffffff;
+          }
+          th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+          }
+          th {
+            background-color: #007bff;
+            color: white;
+          }
+          tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+          tr.dark-theme:nth-child(even) {
+            background-color: #2f2f2f;
+          }
+          ul {
+            list-style-type: none;
+            padding: 0;
+          }
+          button {
+            position: absolute;
+            right: 20px;
+            top: 23px;
+            background-color: #3a09e8;
+            color: white;
+            padding: 30px 60px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+          }
 
-      <table>
-        <tr>
-          <th>Order #</th>
-          <th>Full Name</th>
-          <th>Address</th>
-          <th>Phone Number</th>
-          <th>Email</th>
-          <th>Gender</th>
-          <th>Payment Method</th>
-          <th>Delivery Method</th>
-          <th>Products</th>
-          <th>Order Total</th>
-          <th>Transaction ID</th>
-          <th>Order Date</th>
-          <th>Payment Confirmation</th>
-          <th>Shipping Tracking</th>
-          <th>Delivery Date</th>
-          <th>Carrier Company</th>
-          <th>Order Status</th>
-        </tr>
-  `;
+          button:hover {
+            background-color: #0056b3;
+          }
 
-  // Continue with generating and displaying the buy orders as before
-  randomBuyOrders.forEach((buyOrder, index) => {
-    htmlContent += generateAndPrintBuyOrderHTML(buyOrder, index);
-  });
+          button.dark-theme {
+            background-color: #1f1f1f;
+            color: #ffffff;
+          }
 
-  // Close the table and HTML structure
-  htmlContent += `
-      </table>
-    </body>
-  </html>
-  `;
+          button.dark-theme:hover {
+            background-color: #333333;
+          }
+        </style>
+      </head>
+      <body>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+        <h1>Buy Orders</h1>
 
+        <script>
+          function toggleTheme() {
+            const body = document.body;
+            const table = document.querySelector('table');
+            const rows = document.querySelectorAll('tr');
 
-  try {
-    // Write the HTML content to a file
-    fs.writeFileSync('buy_orders.html', htmlContent, 'utf8');
-    console.log('HTML file "buy_orders.html" has been generated with the buy orders.');
-  } catch (err) {
-    console.error('Error writing HTML file:', err);
+            if (body.classList.contains('dark-theme')) {
+              body.classList.remove('dark-theme');
+              table.classList.remove('dark-theme');
+              rows.forEach((row) => row.classList.remove('dark-theme'));
+            } else {
+              body.classList.add('dark-theme');
+              table.classList.add('dark-theme');
+              rows.forEach((row) => row.classList.add('dark-theme'));
+            }
+          }
+        </script>
+
+        <table>
+          <tr>
+            <th>Order #</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Payment Method</th>
+            <th>Delivery Method</th>
+            <th>Products</th>
+            <th>Order Total</th>
+            <th>Transaction ID</th>
+            <th>Order Date</th>
+            <th>Payment Confirmation</th>
+            <th>Shipping Tracking</th>
+            <th>Delivery Date</th>
+            <th>Carrier Company</th>
+            <th>Order Status</th>
+          </tr>
+    `;
+
+    // Continue with generating and displaying the buy orders as before
+    randomBuyOrders.forEach((buyOrder, index) => {
+      htmlContent += generateAndPrintBuyOrderHTML(buyOrder, index);
+    });
+
+    // Close the table and HTML structure
+    htmlContent += `
+        </table>
+      </body>
+    </html>
+    `;
+
+    try {
+      // Write the HTML content to a file
+      fs.writeFileSync('buy_orders.html', htmlContent, 'utf8');
+      console.log('HTML file "buy_orders.html" has been generated with the buy orders.');
+    } catch (err) {
+      console.error('Error writing HTML file:', err);
+    }
+
+    try {
+      // Write the data to JSON file
+      fs.writeFileSync('buy_orders.json', JSON.stringify(randomBuyOrders, null, 2), 'utf8');
+      console.log('JSON file "buy_orders.json" has been generated with the buy orders.');
+    } catch (err) {
+      console.error('Error writing JSON file:', err);
+    }
+
+    // Write the data to the CSV file
+    csvWriter
+      .writeRecords(randomBuyOrders)
+      .then(() => {
+        console.log('CSV file "buy_orders.csv" has been generated with the buy orders.');
+        rl.close();
+      })
+      .catch((error) => console.error('Error writing CSV:', error));
+  } else {
+    console.log('Please enter a valid positive number.');
+    rl.close();
   }
-
-  try {
-    // Write the data to JSON file
-    fs.writeFileSync('buy_orders.json', JSON.stringify(randomBuyOrders, null, 2), 'utf8');
-    console.log('JSON file "buy_orders.json" has been generated with the buy orders.');
-  } catch (err) {
-    console.error('Error writing JSON file:', err);
-  }
-
-  // Write the data to the CSV file
-  csvWriter
-    .writeRecords(randomBuyOrders)
-    .then(() => {
-      console.log('CSV file "buy_orders.csv" has been generated with the buy orders.');
-      rl.close();
-    })
-    .catch((error) => console.error('Error writing CSV:', error));
 });
