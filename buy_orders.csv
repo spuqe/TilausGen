@@ -1,6 +1,11 @@
 Order Number,Full Name,Address,Phone Number,Email,Gender,Payment Method,Delivery Method,Products,Order Total,Order Total With Tax,Transaction ID,Order Date,Payment Status,Payment Date,Tracking Number,Estimated Delivery Date,Carrier Company,Order Status
-,Ella Laukkanen,"Ruusupuisto, Seinäjoki, 57100",+358 401234567,EllaLaukkanen@gmail.com,Nainen,Coinbase pay,Ovelle,"[object Object],[object Object],[object Object]",1016.8000000000001,,338005,2023-04-17T17:48:19.942Z,,,,,,Returned
-,Niina Tuominen,"Katajakuja, Kajaani, 67100",+358 402345678,NiinaTuominen@yandex.com,Mies,Gift card,Posti automaatti,"[object Object],[object Object],[object Object]",4265.6,,891610,2023-10-30T07:52:41.100Z,,,,,,Shipped
-,Niina Korpi,"Sadekuja, Salo, 60100",+358 408765432,NiinaKorpi@yandex.com,Nainen,Moon pay,Ovelle,"[object Object],[object Object]",1271,,281707,2023-01-10T10:13:58.224Z,,,,,,Shipped
-,Anni Kallio,"Pilvitie, Pietarsaari, 13100",+358 409876543,AnniKallio@outlook.com,Nainen,Trust,Postin toimipiste,[object Object],3100,,608817,2023-02-06T05:19:16.457Z,,,,,,Delivered
-,Risto Koskela,"Unikkopolku, Joensuu, 80100",+358 408765432,RistoKoskela@icloud.com,Mies,Gift card,Ovelle,[object Object],558,,526473,2023-10-26T05:22:14.336Z,,,,,,Processing
+,Eero Nieminen,"Testitie, Pietarsaari, 06100",+358 406543210,EeroNieminen@yahoo.com,Mies,Credit/Debit card,Ovelle,"[object Object],[object Object]",595.2,,958184,2023-07-14T22:10:38.663Z,,,,,,Processing
+,Samuli Korpela,"Revontulentie, Joensuu, 78200",+358 405678901,SamuliKorpela@zoho.com,Mies,Paypal,Posti automaatti,[object Object],3968,,80364,2023-10-19T08:23:06.137Z,,,,,,Processing
+,Seppo Ranta,"Tammikuja, Hämeenlinna, 60100",+358 408765432,SeppoRanta@gmail.com,Nainen,Ethereum,Posti automaatti,"[object Object],[object Object]",6944,,467679,2023-03-12T02:52:41.871Z,,,,,,Delivered
+,Pekka Lindroos,"Ruusupuisto, Pietarsaari, 45100",+358 406543210,PekkaLindroos@protonmail.com,Nainen,Coinbase pay,Posti automaatti,[object Object],372,,357051,2023-01-04T03:31:16.413Z,,,,,,Processing
+,Janne Kallio,"Pihlajatie, Kuopio, 87100",+358 402345678,JanneKallio@icloud.com,Nainen,Ethereum,Postin toimipiste,"[object Object],[object Object],[object Object],[object Object]",3385.2,,928747,2023-06-10T20:20:24.358Z,,,,,,Delivered
+,Riikka Koskinen,"Kapraantie, Rovaniemi, 40100",+358 407654321,RiikkaKoskinen@protonmail.com,Mies,Coinbase pay,Ovelle,"[object Object],[object Object],[object Object],[object Object],[object Object]",3447.2000000000003,,291802,2023-08-29T07:41:00.893Z,,,,,,Delivered
+,Mikko Koivula,"Punatienniemi, Kajaani, 50100",+358 401234567,MikkoKoivula@outlook.com,Mies,Skrill,Ovelle,[object Object],3968,,322421,2023-01-26T07:33:25.387Z,,,,,,Cancelled
+,Mikko Korpela,"Sinipolku, Kajaani, 68600",+358 402345678,MikkoKorpela@zoho.com,Mies,Moon pay,Ovelle,[object Object],744,,395703,2023-06-13T10:40:49.606Z,,,,,,Processing
+,Jussi Ranta,"Tähtisilmä, Mikkeli, 06100",+358 405678901,JussiRanta@zoho.com,Nainen,Moon pay,Postin toimipiste,"[object Object],[object Object]",3348,,775864,2023-10-26T01:39:57.336Z,,,,,,Shipped
+,Mari Savolainen,"Tulppaanikatu, Hyvinkää, 67100",+358 404372343,MariSavolainen@yandex.com,Nainen,Ethereum,Posti automaatti,"[object Object],[object Object]",285.2,,683644,2023-09-25T08:27:03.308Z,,,,,,Returned

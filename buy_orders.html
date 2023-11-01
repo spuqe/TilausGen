@@ -1,123 +1,123 @@
 
-    <html>
-      <head>
-        <title>Buy Orders</title>
-        <style>
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #000000;
-          }
-          body.dark-theme {
-            background-color: #1f1f1f;
-            color: #ffffff;
-          }
-          h1 {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-          }
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px;
-            background-color: white;
-            color: #000000;
-          }
-          table.dark-theme {
-            background-color: #2f2f2f;
-            color: #ffffff;
-          }
-          th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-          }
-          th {
-            background-color: #007bff;
-            color: white;
-          }
-          tr:nth-child(even) {
-            background-color: #f2f2f2;
-          }
-          tr.dark-theme:nth-child(even) {
-            background-color: #2f2f2f;
-          }
-          ul {
-            list-style-type: none;
-            padding: 0;
-          }
-          button {
-            position: absolute;
-            right: 20px;
-            top: 23px;
-            background-color: #3a09e8;
-            color: white;
-            padding: 30px 60px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-          }
+        <html>
+          <head>
+            <title>Buy Orders</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                color: #000000;
+              }
+              body.dark-theme {
+                background-color: #1f1f1f;
+                color: #ffffff;
+              }
+              h1 {
+                background-color: #007bff;
+                color: white;
+                padding: 20px;
+                text-align: center;
+              }
+              table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px;
+                background-color: white;
+                color: #000000;
+              }
+              table.dark-theme {
+                background-color: #2f2f2f;
+                color: #ffffff;
+              }
+              th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+              }
+              th {
+                background-color: #007bff;
+                color: white;
+              }
+              tr:nth-child(even) {
+                background-color: #f2f2f2;
+              }
+              tr.dark-theme:nth-child(even) {
+                background-color: #2f2f2f;
+              }
+              ul {
+                list-style-type: none;
+                padding: 0;
+              }
+              button {
+                position: absolute;
+                right: 20px;
+                top: 23px;
+                background-color: #3a09e8;
+                color: white;
+                padding: 30px 60px;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+              }
 
-          button:hover {
-            background-color: #0056b3;
-          }
+              button:hover {
+                background-color: #0056b3;
+              }
 
-          button.dark-theme {
-            background-color: #1f1f1f;
-            color: #ffffff;
-          }
+              button.dark-theme {
+                background-color: #1f1f1f;
+                color: #ffffff;
+              }
 
-          button.dark-theme:hover {
-            background-color: #333333;
-          }
-        </style>
-      </head>
-      <body>
-        <button onclick="toggleTheme()">Toggle Theme</button>
-        <h1>Buy Orders</h1>
+              button.dark-theme:hover {
+                background-color: #333333;
+              }
+            </style>
+          </head>
+          <body>
+            <button onclick="toggleTheme()">Toggle Theme</button>
+            <h1>Buy Orders</h1>
 
-        <script>
-          function toggleTheme() {
-            const body = document.body;
-            const table = document.querySelector('table');
-            const rows = document.querySelectorAll('tr');
+            <script>
+              function toggleTheme() {
+                const body = document.body;
+                const table = document.querySelector('table');
+                const rows = document.querySelectorAll('tr');
 
-            if (body.classList.contains('dark-theme')) {
-              body.classList.remove('dark-theme');
-              table.classList.remove('dark-theme');
-              rows.forEach((row) => row.classList.remove('dark-theme'));
-            } else {
-              body.classList.add('dark-theme');
-              table.classList.add('dark-theme');
-              rows.forEach((row) => row.classList.add('dark-theme'));
-            }
-          }
-        </script>
+                if (body.classList.contains('dark-theme')) {
+                  body.classList.remove('dark-theme');
+                  table.classList.remove('dark-theme');
+                  rows.forEach((row) => row.classList.remove('dark-theme'));
+                } else {
+                  body.classList.add('dark-theme');
+                  table.classList.add('dark-theme');
+                  rows.forEach((row) => row.classList.add('dark-theme'));
+                }
+              }
+            </script>
 
-        <table>
-          <tr>
-            <th>Order #</th>
-            <th>Full Name</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Payment Method</th>
-            <th>Delivery Method</th>
-            <th>Products</th>
-            <th>Order Total</th>
-            <th>Transaction ID</th>
-            <th>Order Date</th>
-            <th>Payment Confirmation</th>
-            <th>Shipping Tracking</th>
-            <th>Delivery Date</th>
-            <th>Carrier Company</th>
-            <th>Order Status</th>
-          </tr>
-    <tr><td>1</td><td>Ella Laukkanen</td><td>Ruusupuisto, Seinäjoki, 57100</td><td>+358 401234567</td><td>EllaLaukkanen@gmail.com</td><td>Nainen</td><td>Coinbase pay</td><td>Ovelle</td><td><ul><li>Digital Drawing Tablet - Quantity: 4</li><li>Blender - Quantity: 3</li><li>Electric Kettle - Quantity: 1</li></ul></td><td>1016.8000000000001</td><td>Transaction ID: 338005</td><td>Order Date: 2023-04-17T17:48:19.942Z</td><td>Success, Date: 2023-06-12T05:42:56.018Z</td><td>963920037</td><td>Estimated Delivery Date: 2023-11-29T23:19:46.285Z</td><td>UPS</td><td>Returned</td></tr><tr><td>2</td><td>Niina Tuominen</td><td>Katajakuja, Kajaani, 67100</td><td>+358 402345678</td><td>NiinaTuominen@yandex.com</td><td>Mies</td><td>Gift card</td><td>Posti automaatti</td><td><ul><li>Refrigerator - Quantity: 4</li><li>Electric Scooter - Quantity: 2</li><li>Electric Toothbrush - Quantity: 4</li></ul></td><td>4265.6</td><td>Transaction ID: 891610</td><td>Order Date: 2023-10-30T07:52:41.100Z</td><td>Success, Date: 2023-05-22T15:17:57.721Z</td><td>287037505</td><td>Estimated Delivery Date: 2023-11-09T06:59:57.226Z</td><td>DHL</td><td>Shipped</td></tr><tr><td>3</td><td>Niina Korpi</td><td>Sadekuja, Salo, 60100</td><td>+358 408765432</td><td>NiinaKorpi@yandex.com</td><td>Nainen</td><td>Moon pay</td><td>Ovelle</td><td><ul><li>LED Monitor - Quantity: 4</li><li>Hair Dryer - Quantity: 1</li></ul></td><td>1271</td><td>Transaction ID: 281707</td><td>Order Date: 2023-01-10T10:13:58.224Z</td><td>Failed, Date: 2023-03-23T17:04:09.847Z</td><td>479907456</td><td>Estimated Delivery Date: 2023-11-13T19:35:23.896Z</td><td>Matkahuolto</td><td>Shipped</td></tr><tr><td>4</td><td>Anni Kallio</td><td>Pilvitie, Pietarsaari, 13100</td><td>+358 409876543</td><td>AnniKallio@outlook.com</td><td>Nainen</td><td>Trust</td><td>Postin toimipiste</td><td><ul><li>Massage Chair - Quantity: 5</li></ul></td><td>3100</td><td>Transaction ID: 608817</td><td>Order Date: 2023-02-06T05:19:16.457Z</td><td>Pending, Date: 2023-10-25T21:58:47.322Z</td><td>605843889</td><td>Estimated Delivery Date: 2023-11-22T04:36:47.250Z</td><td>PostNord</td><td>Delivered</td></tr><tr><td>5</td><td>Risto Koskela</td><td>Unikkopolku, Joensuu, 80100</td><td>+358 408765432</td><td>RistoKoskela@icloud.com</td><td>Mies</td><td>Gift card</td><td>Ovelle</td><td><ul><li>Desk Chair - Quantity: 3</li></ul></td><td>558</td><td>Transaction ID: 526473</td><td>Order Date: 2023-10-26T05:22:14.336Z</td><td>Failed, Date: 2023-07-13T09:19:14.522Z</td><td>776839805</td><td>Estimated Delivery Date: 2023-11-16T13:38:12.864Z</td><td>Posti</td><td>Processing</td></tr>
-        </table>
-      </body>
-    </html>
-    
+            <table>
+              <tr>
+                <th>Order #</th>
+                <th>Full Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Payment Method</th>
+                <th>Delivery Method</th>
+                <th>Products</th>
+                <th>Order Total</th>
+                <th>Transaction ID</th>
+                <th>Order Date</th>
+                <th>Payment Confirmation</th>
+                <th>Shipping Tracking</th>
+                <th>Delivery Date</th>
+                <th>Carrier Company</th>
+                <th>Order Status</th>
+              </tr>
+        <tr><td>1</td><td>Eero Nieminen</td><td>Testitie, Pietarsaari, 06100</td><td>+358 406543210</td><td>EeroNieminen@yahoo.com</td><td>Mies</td><td>Credit/Debit card</td><td>Ovelle</td><td><ul><li>Wireless Earbuds - Quantity: 4</li><li>Blu-ray Player - Quantity: 1</li></ul></td><td>595.2</td><td>Transaction ID: 958184</td><td>Order Date: 2023-07-14T22:10:38.663Z</td><td>Pending, Date: 2023-01-22T10:17:28.159Z</td><td>654266093</td><td>Estimated Delivery Date: 2023-11-04T14:29:20.403Z</td><td>FedEx</td><td>Processing</td></tr><tr><td>2</td><td>Samuli Korpela</td><td>Revontulentie, Joensuu, 78200</td><td>+358 405678901</td><td>SamuliKorpela@zoho.com</td><td>Mies</td><td>Paypal</td><td>Posti automaatti</td><td><ul><li>Television - Quantity: 4</li></ul></td><td>3968</td><td>Transaction ID: 80364</td><td>Order Date: 2023-10-19T08:23:06.137Z</td><td>Failed, Date: 2023-03-09T04:37:58.315Z</td><td>35155267</td><td>Estimated Delivery Date: 2023-11-08T09:45:40.063Z</td><td>GLS</td><td>Processing</td></tr><tr><td>3</td><td>Seppo Ranta</td><td>Tammikuja, Hämeenlinna, 60100</td><td>+358 408765432</td><td>SeppoRanta@gmail.com</td><td>Nainen</td><td>Ethereum</td><td>Posti automaatti</td><td><ul><li>Sofa - Quantity: 4</li><li>Television - Quantity: 3</li></ul></td><td>6944</td><td>Transaction ID: 467679</td><td>Order Date: 2023-03-12T02:52:41.871Z</td><td>Pending, Date: 2023-01-19T00:37:22.168Z</td><td>209474957</td><td>Estimated Delivery Date: 2023-11-22T02:42:57.837Z</td><td>PostNord</td><td>Delivered</td></tr><tr><td>4</td><td>Pekka Lindroos</td><td>Ruusupuisto, Pietarsaari, 45100</td><td>+358 406543210</td><td>PekkaLindroos@protonmail.com</td><td>Nainen</td><td>Coinbase pay</td><td>Posti automaatti</td><td><ul><li>Home Theater System - Quantity: 1</li></ul></td><td>372</td><td>Transaction ID: 357051</td><td>Order Date: 2023-01-04T03:31:16.413Z</td><td>Pending, Date: 2023-07-14T18:28:37.615Z</td><td>652471735</td><td>Estimated Delivery Date: 2023-11-25T08:01:51.805Z</td><td>PostNord</td><td>Processing</td></tr><tr><td>5</td><td>Janne Kallio</td><td>Pihlajatie, Kuopio, 87100</td><td>+358 402345678</td><td>JanneKallio@icloud.com</td><td>Nainen</td><td>Ethereum</td><td>Postin toimipiste</td><td><ul><li>Washing Machine - Quantity: 4</li><li>Handheld Vacuum - Quantity: 5</li><li>Wireless Earbuds - Quantity: 2</li><li>Robot Vacuum - Quantity: 4</li></ul></td><td>3385.2</td><td>Transaction ID: 928747</td><td>Order Date: 2023-06-10T20:20:24.358Z</td><td>Pending, Date: 2023-01-10T11:29:27.116Z</td><td>249057366</td><td>Estimated Delivery Date: 2023-11-02T07:32:23.928Z</td><td>Posti</td><td>Delivered</td></tr><tr><td>6</td><td>Riikka Koskinen</td><td>Kapraantie, Rovaniemi, 40100</td><td>+358 407654321</td><td>RiikkaKoskinen@protonmail.com</td><td>Mies</td><td>Coinbase pay</td><td>Ovelle</td><td><ul><li>Bluetooth Speaker - Quantity: 1</li><li>Gaming Console - Quantity: 3</li><li>Electric Scooter - Quantity: 4</li><li>Smartwatch - Quantity: 2</li><li>External Hard Drive - Quantity: 1</li></ul></td><td>3447.2000000000003</td><td>Transaction ID: 291802</td><td>Order Date: 2023-08-29T07:41:00.893Z</td><td>Failed, Date: 2023-09-09T20:00:33.418Z</td><td>855658972</td><td>Estimated Delivery Date: 2023-11-09T14:56:46.177Z</td><td>PostNord</td><td>Delivered</td></tr><tr><td>7</td><td>Mikko Koivula</td><td>Punatienniemi, Kajaani, 50100</td><td>+358 401234567</td><td>MikkoKoivula@outlook.com</td><td>Mies</td><td>Skrill</td><td>Ovelle</td><td><ul><li>Sofa - Quantity: 4</li></ul></td><td>3968</td><td>Transaction ID: 322421</td><td>Order Date: 2023-01-26T07:33:25.387Z</td><td>Pending, Date: 2023-07-30T20:43:03.628Z</td><td>95931536</td><td>Estimated Delivery Date: 2023-11-06T06:44:04.129Z</td><td>Matkahuolto</td><td>Cancelled</td></tr><tr><td>8</td><td>Mikko Korpela</td><td>Sinipolku, Kajaani, 68600</td><td>+358 402345678</td><td>MikkoKorpela@zoho.com</td><td>Mies</td><td>Moon pay</td><td>Ovelle</td><td><ul><li>Camera - Quantity: 1</li></ul></td><td>744</td><td>Transaction ID: 395703</td><td>Order Date: 2023-06-13T10:40:49.606Z</td><td>Success, Date: 2023-04-26T22:17:34.511Z</td><td>197416189</td><td>Estimated Delivery Date: 2023-11-25T17:17:39.241Z</td><td>Schenker</td><td>Processing</td></tr><tr><td>9</td><td>Jussi Ranta</td><td>Tähtisilmä, Mikkeli, 06100</td><td>+358 405678901</td><td>JussiRanta@zoho.com</td><td>Nainen</td><td>Moon pay</td><td>Postin toimipiste</td><td><ul><li>Home Theater System - Quantity: 4</li><li>Smartphone - Quantity: 3</li></ul></td><td>3348</td><td>Transaction ID: 775864</td><td>Order Date: 2023-10-26T01:39:57.336Z</td><td>Pending, Date: 2023-03-16T12:56:31.062Z</td><td>26313859</td><td>Estimated Delivery Date: 2023-11-06T09:49:02.008Z</td><td>Posti</td><td>Shipped</td></tr><tr><td>10</td><td>Mari Savolainen</td><td>Tulppaanikatu, Hyvinkää, 67100</td><td>+358 404372343</td><td>MariSavolainen@yandex.com</td><td>Nainen</td><td>Ethereum</td><td>Posti automaatti</td><td><ul><li>Table Fan - Quantity: 4</li><li>Toaster Oven - Quantity: 1</li></ul></td><td>285.2</td><td>Transaction ID: 683644</td><td>Order Date: 2023-09-25T08:27:03.308Z</td><td>Pending, Date: 2023-02-20T02:58:47.753Z</td><td>34203918</td><td>Estimated Delivery Date: 2023-11-15T04:30:57.788Z</td><td>FedEx</td><td>Returned</td></tr>
+            </table>
+          </body>
+        </html>
+        
